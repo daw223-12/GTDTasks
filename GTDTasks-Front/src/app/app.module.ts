@@ -18,6 +18,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDividerModule} from '@angular/material/divider';
 
 
+
 // Components
 import { AppComponent } from './app.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
@@ -47,6 +48,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    RouterModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -58,7 +60,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatInputModule, 
     MatCardModule,
     MatDividerModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

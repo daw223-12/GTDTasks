@@ -21,8 +21,10 @@ export class TaskSimpleComponent {
   }
 
   addMeal() {
-    console.log("AKLSDJLKSADJKLSADJKL")
     var inputsArray = (this.myForm.get('groupArray') as FormArray);
+    for (let element in inputsArray) {
+      console.log(element)
+    }
     const newGroup = new FormGroup({
       label: new FormControl('')
     });
@@ -36,6 +38,18 @@ export class TaskSimpleComponent {
   removeMeal(index: number) {
     var inputsArray = (this.myForm.get('groupArray') as FormArray);
     inputsArray.removeAt(index);
+  }
+
+  enterKeyPressed(event: KeyboardEvent) {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      this.addMeal();
+    }
+  }
+
+  onInput(index: number) {
+    const textarea = this.inputs.toArray()[index].nativeElement
+    textarea.style.height = textarea.scrollHeight + 'px';
   }
 
   onBlurInput(index: number) {

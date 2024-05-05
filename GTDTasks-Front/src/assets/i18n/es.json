@@ -1,3 +1,5 @@
 {
-    
+    "taskList": {
+        "deleteBtn": "Borrar"
+    }
 }
