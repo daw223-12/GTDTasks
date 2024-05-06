@@ -1,5 +1,15 @@
 {
     "taskList": {
         "deleteBtn": "Borrar"
+    },
+    "header": {
+        "inbox": "Inbox",
+        "today": "Hoy",
+        "calendar": "Calendario",
+        "actionable": "Accionable",
+        "hibernating": "Incubadora",
+        "tickler": "Recordatorios",
+        "logOut": "Cerrar sesión",
+        "search": "Buscar"
     }
 }

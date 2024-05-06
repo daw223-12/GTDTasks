@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./task-card.component.scss']
 })
 export class TaskCardComponent {
-
+  
 }

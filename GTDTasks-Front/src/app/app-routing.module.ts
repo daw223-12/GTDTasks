@@ -1,12 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MainPageComponent } from './pages/main-page/main-page.component';
+import { TodayPageComponent } from './pages/today-page/today-page.component';
+import { CalendarPageComponent } from './pages/calendar-page/calendar-page.component';
+import { ActionablePageComponent } from './pages/actionable-page/actionable-page.component';
+import { HibernatingPageComponent } from './pages/hibernating-page/hibernating-page.component';
+import { TicklerPageComponent } from './pages/tickler-page/tickler-page.component';
 
 const routes: Routes = [
-  {
-    path: '**',
-    component: MainPageComponent
-  }
+  { path: 'inbox', component: MainPageComponent },
+  { path: '', redirectTo: '/inbox', pathMatch: 'full' }, 
+  { path: 'today', component: TodayPageComponent },
+  { path: 'calendar', component: CalendarPageComponent },
+  { path: 'actionable', component: ActionablePageComponent },
+  { path: 'hibernating', component: HibernatingPageComponent },
+  { path: 'tickler', component: TicklerPageComponent },
+  { path: '**', component: MainPageComponent }
 ];
 
 @NgModule({

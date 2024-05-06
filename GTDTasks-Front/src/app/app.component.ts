@@ -9,12 +9,11 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent {
 
   constructor(private translate: TranslateService) {
-
+    this.setAppLanguaje();
   }
 
   setAppLanguaje() {
     this.translate.setDefaultLang('es');
-    this.translate.use(this.translate.getBrowserLang()!);
   }
 
   title = 'GTDTasks';

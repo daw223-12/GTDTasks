@@ -16,6 +16,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDividerModule} from '@angular/material/divider';
+import { MatTooltipModule } from '@angular/material/tooltip';
+
 
 
 
@@ -26,10 +28,15 @@ import { HeaderComponent } from './components/header/header.component';
 import { TaskCardComponent } from './components/task-card/task-card.component';
 import { TaskFatherComponent } from './components/task-father/task-father.component';
 import { TaskSimpleComponent } from './components/task-simple/task-simple.component';
+import { InboxPageComponent } from './pages/inbox-page/inbox-page.component';
+import { TodayPageComponent } from './pages/today-page/today-page.component';
+import { CalendarPageComponent } from './pages/calendar-page/calendar-page.component';
+import { ActionablePageComponent } from './pages/actionable-page/actionable-page.component';
+import { HibernatingPageComponent } from './pages/hibernating-page/hibernating-page.component';
+import { TicklerPageComponent } from './pages/tickler-page/tickler-page.component';
 
-
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
@@ -39,7 +46,13 @@ export function HttpLoaderFactory(http: HttpClient) {
     HeaderComponent,
     TaskCardComponent,
     TaskFatherComponent,
-    TaskSimpleComponent
+    TaskSimpleComponent,
+    InboxPageComponent,
+    TodayPageComponent,
+    CalendarPageComponent,
+    ActionablePageComponent,
+    HibernatingPageComponent,
+    TicklerPageComponent
   ],
   imports: [
     BrowserModule,
@@ -51,17 +64,18 @@ export function HttpLoaderFactory(http: HttpClient) {
     RouterModule,
     TranslateModule.forRoot({
       loader: {
-        provide: TranslateLoader,
-        useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
+          provide: TranslateLoader,
+          useFactory: createTranslateLoader,
+          deps: [HttpClient]
       }
-    }),
+  }),
     MatExpansionModule,
     MatInputModule, 
     MatCardModule,
     MatDividerModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

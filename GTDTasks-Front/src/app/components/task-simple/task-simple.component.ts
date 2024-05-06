@@ -22,9 +22,7 @@ export class TaskSimpleComponent {
 
   addMeal() {
     var inputsArray = (this.myForm.get('groupArray') as FormArray);
-    for (let element in inputsArray) {
-      console.log(element)
-    }
+    console.log(inputsArray)
     const newGroup = new FormGroup({
       label: new FormControl('')
     });
