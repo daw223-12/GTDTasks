@@ -2,7 +2,7 @@ import { NgClass, NgFor, NgStyle } from '@angular/common';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatRippleModule } from '@angular/material/core';
-import { getDaysForMonthPage } from 'src/app/Components/Data/Data';
+import { getDaysForMonthPage } from 'src/app/components/Data/Data';
 import { CalendarDay, CalendarEvent, DateType, ENGLISH } from '../../Models';
 import { CalendarService } from '../../Services';
 

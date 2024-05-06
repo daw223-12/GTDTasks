@@ -34,6 +34,7 @@ import { CalendarPageComponent } from './pages/calendar-page/calendar-page.compo
 import { ActionablePageComponent } from './pages/actionable-page/actionable-page.component';
 import { HibernatingPageComponent } from './pages/hibernating-page/hibernating-page.component';
 import { TicklerPageComponent } from './pages/tickler-page/tickler-page.component';
+import { CalendarComponent } from './components/calendar';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -62,6 +63,7 @@ export function createTranslateLoader(http: HttpClient) {
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule,
+    CalendarComponent,
     TranslateModule.forRoot({
       loader: {
           provide: TranslateLoader,
