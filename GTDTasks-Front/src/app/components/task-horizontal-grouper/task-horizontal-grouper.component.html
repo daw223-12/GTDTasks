@@ -1,0 +1,11 @@
+
+<div class="container">
+  <div class="card" [@slideInOut]="state">
+    <!-- Contenido de la primera tarjeta -->
+    <button (click)="toggleState()">Mostrar detrás</button>
+  </div>
+  <div class="card-behind" *ngIf="state === 'out'">
+    <!-- Contenido de la segunda tarjeta -->
+    <button (click)="toggleState()">Ocultar</button>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<form [formGroup]="myForm" class="scrollable-container d-flex flex-column align-items-center"
+    style="position: relative;">
+    <div formArrayName="groupArray" class="w-100">
+        <div *ngFor="let input of groupArrayControls; let i = index" [formGroupName]="i"
+            class="tasks-container align-all-center ">
+            <input class="form-check-input mx-1" type="checkbox" value="" id="index">
+            <input type="text" class=" form-control-sm m-1" required />
+            <textarea formControlName="label" (input)="onInput(i)" (blur)="onBlurInput(i)" #inputs
+                (keydown)="enterKeyPressed($event)" class="textarea form-control-sm m-1"> </textarea>
+            <mat-icon>edit</mat-icon>
+        </div>
+    </div>
+    <button color="accent" class="btn btn-outline-secondary m-2" aria-label="Example icon button with a plus one icon"
+        (click)="addMeal()">
+        {{'ticklerFile.addReminder' | translate}}
+    </button>
+</form>

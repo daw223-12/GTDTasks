@@ -8,6 +8,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppRoutingModule } from './app-routing.module';
 
+
 // ANGULAR MATERIAL
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatInputModule} from '@angular/material/input';
@@ -17,16 +18,15 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatDividerModule} from '@angular/material/divider';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 
 
 // Components
 import { AppComponent } from './app.component';
-import { MainPageComponent } from './pages/main-page/main-page.component';
 import { HeaderComponent } from './components/header/header.component';
 import { TaskCardComponent } from './components/task-card/task-card.component';
-import { TaskFatherComponent } from './components/task-father/task-father.component';
 import { TaskSimpleComponent } from './components/task-simple/task-simple.component';
 import { InboxPageComponent } from './pages/inbox-page/inbox-page.component';
 import { TodayPageComponent } from './pages/today-page/today-page.component';
@@ -35,6 +35,11 @@ import { ActionablePageComponent } from './pages/actionable-page/actionable-page
 import { HibernatingPageComponent } from './pages/hibernating-page/hibernating-page.component';
 import { TicklerPageComponent } from './pages/tickler-page/tickler-page.component';
 import { CalendarComponent } from './components/calendar';
+import { NavbarBottomComponent } from './components/navbar-bottom/navbar-bottom.component';
+import { TaskHorizontalGrouperComponent } from './components/task-horizontal-grouper/task-horizontal-grouper.component';
+import { ReminderTabsComponent } from './components/reminder-tabs/reminder-tabs.component';
+import { RemindersComponent } from './components/reminders/reminders.component';
+import { ReminderGrouperComponent } from './components/reminder-grouper/reminder-grouper.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -43,17 +48,20 @@ export function createTranslateLoader(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    MainPageComponent,
     HeaderComponent,
     TaskCardComponent,
-    TaskFatherComponent,
     TaskSimpleComponent,
     InboxPageComponent,
     TodayPageComponent,
     CalendarPageComponent,
     ActionablePageComponent,
     HibernatingPageComponent,
-    TicklerPageComponent
+    TicklerPageComponent,
+    NavbarBottomComponent,
+    TaskHorizontalGrouperComponent,
+    ReminderTabsComponent,
+    RemindersComponent,
+    ReminderGrouperComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +85,8 @@ export function createTranslateLoader(http: HttpClient) {
     MatDividerModule,
     MatIconModule,
     MatButtonModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

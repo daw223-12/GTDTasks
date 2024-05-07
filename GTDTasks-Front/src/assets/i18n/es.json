@@ -11,5 +11,13 @@
         "tickler": "Recordatorios",
         "logOut": "Cerrar sesión",
         "search": "Buscar"
+    },
+    "ticklerFile": {
+        "week": "Semana",
+        "month": "Mes",
+        "year": "Año",
+        "date": "fecha",
+        "reminder": "Recordatorio",
+        "addReminder": "Agregar recordatorio"
     }
 }
