@@ -23,16 +23,14 @@ import {MatTabsModule} from '@angular/material/tabs';
 
 
 
+
 // Components
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { TaskCardComponent } from './components/task-card/task-card.component';
 import { TaskSimpleComponent } from './components/task-simple/task-simple.component';
-import { InboxPageComponent } from './pages/inbox-page/inbox-page.component';
 import { TodayPageComponent } from './pages/today-page/today-page.component';
 import { CalendarPageComponent } from './pages/calendar-page/calendar-page.component';
-import { ActionablePageComponent } from './pages/actionable-page/actionable-page.component';
-import { HibernatingPageComponent } from './pages/hibernating-page/hibernating-page.component';
 import { TicklerPageComponent } from './pages/tickler-page/tickler-page.component';
 import { CalendarComponent } from './components/calendar';
 import { NavbarBottomComponent } from './components/navbar-bottom/navbar-bottom.component';
@@ -40,6 +38,11 @@ import { TaskHorizontalGrouperComponent } from './components/task-horizontal-gro
 import { ReminderTabsComponent } from './components/reminder-tabs/reminder-tabs.component';
 import { RemindersComponent } from './components/reminders/reminders.component';
 import { ReminderGrouperComponent } from './components/reminder-grouper/reminder-grouper.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { LoginComponentComponent } from './components/login-component/login-component.component';
+import { LoginRegisterComponent } from './components/login-register/login-register.component';
+import { SimpleTaskPageComponent } from './pages/simple-task-page/simple-task-page.component';
+import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -51,17 +54,19 @@ export function createTranslateLoader(http: HttpClient) {
     HeaderComponent,
     TaskCardComponent,
     TaskSimpleComponent,
-    InboxPageComponent,
     TodayPageComponent,
     CalendarPageComponent,
-    ActionablePageComponent,
-    HibernatingPageComponent,
     TicklerPageComponent,
     NavbarBottomComponent,
     TaskHorizontalGrouperComponent,
     ReminderTabsComponent,
     RemindersComponent,
-    ReminderGrouperComponent
+    ReminderGrouperComponent,
+    LoginPageComponent,
+    LoginComponentComponent,
+    LoginRegisterComponent,
+    SimpleTaskPageComponent,
+    NotFoundPageComponent
   ],
   imports: [
     BrowserModule,
@@ -87,6 +92,7 @@ export function createTranslateLoader(http: HttpClient) {
     MatButtonModule,
     MatTooltipModule,
     MatTabsModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

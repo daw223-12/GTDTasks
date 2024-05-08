@@ -1,13 +1,26 @@
 <form [formGroup]="myForm" class="scrollable-container d-flex flex-column align-items-center"
     style="position: relative;">
-    <div formArrayName="groupArray" class="w-100">
-        <div *ngFor="let input of groupArrayControls; let i = index" [formGroupName]="i"
-            class="tasks-container align-all-center ">
-            <input class="form-check-input mx-1" type="checkbox" value="" id="index">
-            <input type="text" class=" form-control-sm m-1" required />
-            <textarea formControlName="label" (input)="onInput(i)" (blur)="onBlurInput(i)" #inputs
-                (keydown)="enterKeyPressed($event)" class="textarea form-control-sm m-1"> </textarea>
-            <mat-icon>edit</mat-icon>
+    <div class="container reminders-container mx-3">
+        <div class="row">
+            <div class="col-1" style="background-color: #f8d7da;"></div>
+            <div class="col-10 d-none d-md-flex justify-content-around">
+                <p class="date">Jpña</p>
+                <p>Jpña</p>
+            </div>
+            <div class="col-1" style="background-color: #fff3cd;">10%</div>
+        </div>
+    </div>
+    <div formArrayName="groupArray" class="container-fluid reminders-container mx-3">
+        <div *ngFor="let input of groupArrayControls; let i = index" [formGroupName]="i" class="row">
+            <div class="col-1 align-all-center"><input class="form-check-input" type="checkbox" value="" id="index">
+            </div>
+            <div class="col-9 col-sm-9 col-md-10 d-flex justify-content-around flex-wrap">
+                <input type="date" class=" form-control date my-2" required />
+                <textarea formControlName="label" (input)="onInput(i)" (blur)="onBlurInput(i)" #inputs
+                    (keydown)="enterKeyPressed($event)" class="textarea form-control mb-2 my-md-2"> </textarea>
+            </div>
+            <div class="col-2 col-sm-2 col-md-1 align-all-center"><mat-icon>edit</mat-icon></div>
+            <mat-divider></mat-divider>
         </div>
     </div>
     <button color="accent" class="btn btn-outline-secondary m-2" aria-label="Example icon button with a plus one icon"

@@ -1,4 +1,13 @@
 {
+    "login": {
+        "login": "Iniciar sesión",
+        "register": "Registro de usuario",
+        "username": "Nombre de usuario",
+        "password": "Contraseña",
+        "email": "E-mail",
+        "confirmPassword": "Confirmar contraseña",
+        "recoverPassword": "Recuperar contraseña"
+    },
     "taskList": {
         "deleteBtn": "Borrar"
     },

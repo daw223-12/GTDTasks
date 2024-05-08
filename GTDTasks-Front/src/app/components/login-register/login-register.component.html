@@ -1,0 +1,45 @@
+<div>
+    
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>
+                <p>{{'login.register' | translate}}</p>
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <form>
+                <p class="align-all-center">
+                    <mat-form-field appearance="outline">
+                        <mat-label>{{'login.username' | translate}}</mat-label>
+                        <input matInput required>
+                    </mat-form-field>
+                </p>
+                <p class="align-all-center">
+                    <mat-form-field appearance="outline">
+                        <mat-label>{{'login.email' | translate}}</mat-label>
+                        <input matInput required>
+                    </mat-form-field>
+                </p>
+                <p class="align-all-center">
+                    <mat-form-field appearance="outline">
+                        <mat-label>{{'login.password' | translate}}</mat-label>
+                        <input matInput required>
+                    </mat-form-field>
+                </p>
+                <p class="align-all-center">
+                    <mat-form-field appearance="outline">
+                        <mat-label>{{'login.confirmPassword' | translate}}</mat-label>
+                        <input matInput required>
+                    </mat-form-field>
+                </p>
+            </form>
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <button mat-button>{{'login.recoverPassword' | translate}}</button>
+            <button mat-button><mat-icon>login</mat-icon></button>
+        </mat-card-actions>
+    </mat-card>
+    <div class="d-flex justify-content-end" >
+        <a routerLink="/login" class="link-opacity-25-hover ms-auto">{{'login.login' | translate}}</a>
+    </div>
+</div>

@@ -3,9 +3,11 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: rgb(250, 249, 249);}
 
-.container-full-height {height: calc(100vh - 64px);}
-
-.align-all-center {display: flex; justify-content: center; align-items: center;}
-
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// Personalized classes:
+
+.entering-form {}
+
+.align-all-center {display: flex; justify-content: center; align-items: center;}
