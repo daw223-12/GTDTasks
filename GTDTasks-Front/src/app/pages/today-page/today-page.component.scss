@@ -1,0 +1,20 @@
+app-task-card {
+  min-width: 260px;
+}
+
+.cosita {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scrollable-container {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.scrollable-item {
+  display: inline-block;
+}

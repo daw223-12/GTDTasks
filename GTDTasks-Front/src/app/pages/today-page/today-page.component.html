@@ -1,8 +1,16 @@
-<app-header></app-header>
-<!-- TODO: Se ha roto el header al hacerlo pequeño -->
-<div class="d-flex justify-content-center align-items-baseline container-full-height w-100">
-    <app-task-card class="d-flex justify-content-center align-items-baseline mt-5 flex-fill"></app-task-card>
-    <app-task-card class="d-flex justify-content-center align-items-baseline mt-5 flex-fill"></app-task-card>
-    <app-task-card class="d-flex justify-content-center align-items-baseline mt-5 flex-fill"></app-task-card>
-    <app-task-card class="d-flex justify-content-center align-items-baseline mt-5 flex-fill"></app-task-card>
+<app-header class="position-fixed w-100"></app-header>
+<div class="cosita">
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="scrollable-container">
+                    <app-task-card class="scrollable-item"></app-task-card>
+                    <app-task-card class="scrollable-item"></app-task-card>
+                    <app-task-card class="scrollable-item"></app-task-card>
+                    <app-task-card class="scrollable-item"></app-task-card>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

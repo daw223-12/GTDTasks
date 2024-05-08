@@ -6,7 +6,7 @@ import { FormBuilder, FormGroup, FormArray, FormControl } from '@angular/forms';
   templateUrl: './reminders.component.html',
   styleUrls: ['./reminders.component.scss']
 })
-export class RemindersComponent {
+export class RemindersComponent implements OnInit {
   myForm: FormGroup;
   @ViewChildren('inputs') inputs!: QueryList<ElementRef>;
 
@@ -14,6 +14,10 @@ export class RemindersComponent {
     this.myForm = new FormGroup({
       groupArray: new FormArray([])
     });
+  }
+  ngOnInit(): void {
+    this.addMeal();
+    this.addMeal();
   }
 
   get groupArrayControls() {
