@@ -2,39 +2,47 @@
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Expand at sm</a>
     <div class="d-flex align-items-center my-auto">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03"
+        aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <button class="navbar-toggler" type="button" mat-icon-button matTooltip="{{'header.logOut' | translate}}" color="white" aria-label="Logout" >
+      <button class="navbar-toggler" type="button" mat-icon-button matTooltip="{{'header.logOut' | translate}}"
+        color="white" aria-label="Logout">
         <mat-icon [ngStyle]="{'color':'white'}">exit_to_app</mat-icon>
       </button>
     </div>
 
     <div class="collapse navbar-collapse" id="navbarsExample03">
       <ul class="navbar-nav me-auto mb-2 mb-sm-0 mx-1">
-        <li class="nav-item d-sm-none d-md-block" >
-          <a class="nav-link" routerLinkActive="active" routerLink="/inbox" aria-current="page" href="#">{{"header.inbox" | translate}}</a>
+        <li class="nav-item d-sm-none d-md-block">
+          <a class="nav-link" routerLinkActive="active" routerLink="/inbox" aria-current="page"
+            href="#">{{"header.inbox" | translate}}</a>
         </li>
         <li class="nav-item d-sm-none d-md-block">
-          <a class="nav-link" routerLinkActive="active" [routerLink]="['/today']" href="#">{{"header.today" | translate}}</a>
+          <a class="nav-link" routerLinkActive="active" [routerLink]="['/today']" href="#">{{"header.today" |
+            translate}}</a>
         </li>
-        <li class="nav-item d-sm-none d-md-block" >
-          <a class="nav-link" routerLinkActive="active" [routerLink]="['/calendar']" >{{"header.calendar" | translate}}</a>
+        <li class="nav-item d-sm-none d-md-block">
+          <a class="nav-link" routerLinkActive="active" [routerLink]="['/calendar']">{{"header.calendar" |
+            translate}}</a>
         </li>
-        <li class="nav-item d-sm-none d-md-block" >
-          <a class="nav-link" routerLinkActive="active" [routerLink]="['/actionable']">{{"header.actionable" | translate}}</a>
+        <li class="nav-item d-sm-none d-md-block">
+          <a class="nav-link" routerLinkActive="active" [routerLink]="['/actionable']">{{"header.actionable" |
+            translate}}</a>
         </li>
-        <li class="nav-item" >
-          <a class="nav-link" routerLinkActive="active" [routerLink]="['/hibernating']" >{{"header.hibernating" | translate}}</a>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" [routerLink]="['/hibernating']">{{"header.hibernating" |
+            translate}}</a>
         </li>
-        <li class="nav-item" >
-          <a class="nav-link" routerLinkActive="active" [routerLink]="['/tickler']" >{{"header.tickler" | translate}}</a>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active" [routerLink]="['/tickler']">{{"header.tickler" | translate}}</a>
         </li>
       </ul>
       <form role="search">
         <input class="form-control" type="search" placeholder="{{'header.search' | translate}}" aria-label="Search">
       </form>
-      <button mat-icon-button matTooltip="{{'header.logOut' | translate}}" color="white" aria-label="Logout" >
+      <button mat-icon-button matTooltip="{{'header.logOut' | translate}}" color="white" aria-label="Logout"
+        routerLink="/login">
         <mat-icon [ngStyle]="{'color':'white'}">exit_to_app</mat-icon>
       </button>
     </div>

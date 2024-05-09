@@ -2,12 +2,12 @@
     style="position: relative;">
     <div class="container reminders-container mx-3">
         <div class="row">
-            <div class="col-1" style="background-color: #f8d7da;"></div>
+            <div class="col-1"></div>
             <div class="col-10 d-none d-md-flex justify-content-around">
-                <p class="date">Jpña</p>
-                <p>Jpña</p>
+                <h3 style="width: 35%; text-align: center;">{{'ticklerFile.date' | translate}}</h3>
+                <h3 style="width: 65%; text-align: center;">{{'ticklerFile.reminder' | translate}}</h3>
             </div>
-            <div class="col-1" style="background-color: #fff3cd;">10%</div>
+            <div class="col-1"></div>
         </div>
     </div>
     <div formArrayName="groupArray" class="container-fluid reminders-container mx-3">
@@ -15,9 +15,13 @@
             <div class="col-1 align-all-center"><input class="form-check-input" type="checkbox" value="" id="index">
             </div>
             <div class="col-9 col-sm-9 col-md-10 d-flex justify-content-around flex-wrap">
-                <input type="date" class=" form-control date my-2" required />
+                <h4 class="d-inline d-md-none mt-2 mb-0 w-100 text-center">{{'ticklerFile.date' | translate}}</h4>
+                <div class="align-all-center">
+                    <input type="date" class=" form-control date my-2" required />
+                </div>
+                <h4 class="d-inline d-md-none mt-2 mb-0 w-100 text-center">{{'ticklerFile.reminder' | translate}}</h4>
                 <textarea formControlName="label" (input)="onInput(i)" (blur)="onBlurInput(i)" #inputs
-                    (keydown)="enterKeyPressed($event)" class="textarea form-control mb-2 my-md-2"> </textarea>
+                    (keydown)="enterKeyPressed($event)" class="textarea form-control mb-2 my-sm-2"> </textarea>
             </div>
             <div class="col-2 col-sm-2 col-md-1 align-all-center"><mat-icon>edit</mat-icon></div>
             <mat-divider></mat-divider>

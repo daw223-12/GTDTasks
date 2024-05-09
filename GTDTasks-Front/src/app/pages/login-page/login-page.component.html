@@ -1,5 +1,5 @@
 <app-header style="position: fixed;" class="w-100"></app-header>
 
-<app-login-component  routerLinkActive="d-none" routerLink="/register" class="align-all-center h-100"></app-login-component>
+<app-login-component *ngIf="ruta == 'login'" class="align-all-center h-100"></app-login-component>
 
-<app-login-register  routerLinkActive="d-none" routerLink="/login" class="align-all-center h-100"></app-login-register>
+<app-login-register *ngIf="ruta == 'register'" routerLink="/register" class="align-all-center h-100"></app-login-register>
