@@ -1,5 +1,6 @@
 import { Component, ElementRef, Input, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, FormControl } from '@angular/forms';
+import { TaskResponse } from 'src/app/models/task-response';
 
 @Component({
   selector: 'app-task-simple',
@@ -8,6 +9,15 @@ import { FormBuilder, FormGroup, FormArray, FormControl } from '@angular/forms';
 })
 export class TaskSimpleComponent {
   myForm: FormGroup;
+  @Input() registerData: TaskResponse = {
+    id: 0,
+    name: '',
+    type: '',
+    father_id: null,
+    user_id: 0,
+    created_at: '',
+    updated_at: ''
+  }
   @ViewChildren('inputs') inputs!: QueryList<ElementRef>;
 
   constructor(private formBuilder: FormBuilder) {

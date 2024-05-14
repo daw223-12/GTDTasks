@@ -1,4 +1,6 @@
 <app-header></app-header>
 <div class="d-flex justify-content-center align-items-baseline container-full-height">
-    <app-task-card class="d-flex justify-content-center align-items-baseline m-5 flex-fill"></app-task-card>
+    <app-task-card *ngIf="ruta == 'inbox'" class="d-flex justify-content-center align-items-baseline m-5 flex-fill"></app-task-card>
+    <app-task-card *ngIf="ruta == 'actionable'" class="d-flex justify-content-center align-items-baseline m-5 flex-fill"></app-task-card>
+    <app-task-card *ngIf="ruta == 'hibernating'" class="d-flex justify-content-center align-items-baseline m-5 flex-fill"></app-task-card>
 </div>
