@@ -99,7 +99,7 @@ export function createTranslateLoader(http: HttpClient) {
     MatTabsModule,
     MatFormFieldModule,
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -26,6 +26,18 @@ export class LoginPageComponent implements OnInit {
     this.route.url.subscribe(segments => {
       this.ruta = segments.join('/');
     });
+    // this.auth.getxsrfToken().subscribe({
+    //   next: (res) => {console.log(res)}
+    // })
+    // this.auth.login("zzz@zzz", "Example123").subscribe({
+    //   next: (res) => {
+    //     console.log(res)
+    //   }
+    // })
+
+    this.auth.makeProtectedGETRequest().subscribe({
+      next: (res) => {console.log(res)}
+    })
   }
 
   register() {
@@ -36,5 +48,8 @@ export class LoginPageComponent implements OnInit {
   login() {
     console.log(this.loginData)
     //this.auth.login(this.loginData).subscribe()
+    this.auth.makeProtectedRequest().subscribe({
+      next: (res) => {console.log(res)}
+    })
   }
 }
