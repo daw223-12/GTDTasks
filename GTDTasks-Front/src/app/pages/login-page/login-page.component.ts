@@ -35,7 +35,7 @@ export class LoginPageComponent implements OnInit {
     //   }
     // })
 
-    this.auth.makeProtectedGETRequest().subscribe({
+    this.auth.getUser().subscribe({
       next: (res) => {console.log(res)}
     })
   }
@@ -48,7 +48,7 @@ export class LoginPageComponent implements OnInit {
   login() {
     console.log(this.loginData)
     //this.auth.login(this.loginData).subscribe()
-    this.auth.makeProtectedRequest().subscribe({
+    this.auth.login({email: "fjuesas4@gmail.com", password: "Example123"}).subscribe({
       next: (res) => {console.log(res)}
     })
   }

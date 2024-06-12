@@ -17,17 +17,17 @@ export class AuthService {
     return this.http.get(this.csrfUrl, { withCredentials: true });
   }
 
-  makeProtectedRequest(): Observable<any> {
+  login(data: any): Observable<any> {
     return this.getCsrfToken().pipe(
       switchMap(() => {
         const headers = new HttpHeaders({
           'X-XSRF-TOKEN': this.cookieService.get('XSRF-TOKEN')
         });
-        return this.http.post(this.apiUrl, {email: "zzz@zzz", password: "Example123"}, { headers: headers, withCredentials: true });
+        return this.http.post(this.apiUrl, data, { headers: headers, withCredentials: true });
       })
     );
   }
-  makeProtectedGETRequest(): Observable<any> {
+  getUser(): Observable<any> {
     return this.getCsrfToken().pipe(
       switchMap(() => {
         const headers = new HttpHeaders({
@@ -38,29 +38,29 @@ export class AuthService {
     );
   }
 
-  login(email: string, password: string): Observable<any> {
-    // First, obtain the CSRF cookie
-    return this.getCsrfToken()
-      .pipe(
-        switchMap((res) => {
-          var headers = new HttpHeaders({
-            'XSRF-TOKEN': this.cookieService.get('XSRF-TOKEN')
-          })
-          return this.http.post(this.baseUrl+'/login',{ email: email, password: password }, { withCredentials: true })
-        }),
-        catchError(error => {
-          return throwError(error);
-        })
-      );
-  }
+  // login(email: string, password: string): Observable<any> {
+  //   // First, obtain the CSRF cookie
+  //   return this.getCsrfToken()
+  //     .pipe(
+  //       switchMap((res) => {
+  //         var headers = new HttpHeaders({
+  //           'XSRF-TOKEN': this.cookieService.get('XSRF-TOKEN')
+  //         })
+  //         return this.http.post(this.baseUrl+'/login',{ email: email, password: password }, { withCredentials: true })
+  //       }),
+  //       catchError(error => {
+  //         return throwError(error);
+  //       })
+  //     );
+  // }
 
   register(data: any): Observable<any> {
     return this.http.post<any>(this.baseUrl + '/register', data);
   }
 
-  getUser(): Observable<any> {
-    return this.http.get<any>(this.baseUrl + '/api/user');
-  }
+  // getUser(): Observable<any> {
+  //   return this.http.get<any>(this.baseUrl + '/api/user');
+  // }
 
   logout(): Observable<any> {
     return this.http.get<any>(this.baseUrl + '/logout');
