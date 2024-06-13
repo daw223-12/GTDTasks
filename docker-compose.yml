@@ -14,7 +14,7 @@ services:
       networkwp:
         ipv4_address: 172.24.0.7
   web:
-    build: webapp.Dockerfile
+    build: .
     restart: always
     ports:
       - "80:80"
