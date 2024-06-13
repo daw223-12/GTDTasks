@@ -7,7 +7,7 @@ services:
       - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: gtdtask_db
+      MYSQL_DATABASE: gtdtasks_db
       MYSQL_USER: francisco
       MYSQL_PASSWORD: 1234
     networks:

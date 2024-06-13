@@ -28,9 +28,6 @@ RUN rm -fr GTDTasks
 WORKDIR /var/www/html/GTDTasks-Front
 
 # Build de la SPA
-RUN npm install --force
-RUN npm install @angular/cli@16.1.0
-RUN ng build --base-href=/
 RUN mkdir ../GTDTasks
 
 RUN mv ./dist/* ../GTDTasks
