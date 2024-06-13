@@ -38,24 +38,15 @@ export class AuthService {
     );
   }
 
-  // login(email: string, password: string): Observable<any> {
-  //   // First, obtain the CSRF cookie
-  //   return this.getCsrfToken()
-  //     .pipe(
-  //       switchMap((res) => {
-  //         var headers = new HttpHeaders({
-  //           'XSRF-TOKEN': this.cookieService.get('XSRF-TOKEN')
-  //         })
-  //         return this.http.post(this.baseUrl+'/login',{ email: email, password: password }, { withCredentials: true })
-  //       }),
-  //       catchError(error => {
-  //         return throwError(error);
-  //       })
-  //     );
-  // }
-
   register(data: any): Observable<any> {
-    return this.http.post<any>(this.baseUrl + '/register', data);
+    return this.getCsrfToken().pipe(
+      switchMap(() => {
+        const headers = new HttpHeaders({
+          'X-XSRF-TOKEN': this.cookieService.get('XSRF-TOKEN')
+        });
+        return this.http.post(this.baseUrl + '/register', data, { headers: headers, withCredentials: true });
+      })
+    );
   }
 
   // getUser(): Observable<any> {
@@ -63,7 +54,14 @@ export class AuthService {
   // }
 
   logout(): Observable<any> {
-    return this.http.get<any>(this.baseUrl + '/logout');
+    return this.getCsrfToken().pipe(
+      switchMap(() => {
+        const headers = new HttpHeaders({
+          'X-XSRF-TOKEN': this.cookieService.get('XSRF-TOKEN')
+        });
+        return this.http.post(this.baseUrl+"/logout", {}, { headers: headers, withCredentials: true });
+      })
+    );
   }
 
 }

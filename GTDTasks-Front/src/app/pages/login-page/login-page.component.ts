@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouteReuseStrategy, Router } from '@angular/router';
 import { LoginData } from 'src/app/models/login-data';
 import { RegisterData } from 'src/app/models/register-data';
 import { AuthService } from 'src/app/services/auth.service';
@@ -20,7 +20,7 @@ export class LoginPageComponent implements OnInit {
     rePassword: ''
   }
 
-  constructor(private route: ActivatedRoute, private auth: AuthService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private auth: AuthService) { }
 
   ngOnInit(): void {
     this.route.url.subscribe(segments => {
@@ -35,21 +35,35 @@ export class LoginPageComponent implements OnInit {
     //   }
     // })
 
-    this.auth.getUser().subscribe({
-      next: (res) => {console.log(res)}
-    })
+    // this.auth.getUser().subscribe({
+    //   next: (res) => {
+        
+    //   },
+    //   error: e => {
+        
+    //   }
+    // })
   }
 
   register() {
     console.log(this.registerData)
-    //this.auth.register(this.registerData).subscribe()
+    this.auth.register({
+      "name" : "Prueba",
+      "email" : "fjuesas4@gmail.com",
+      "password" : "Example123",
+      "password_confirmation": "Example123"
+  }).subscribe({
+    next: res => {
+      this.router.navigate(['/inbox']);
+    }
+  })
   }
 
   login() {
-    console.log(this.loginData)
-    //this.auth.login(this.loginData).subscribe()
     this.auth.login({email: "fjuesas4@gmail.com", password: "Example123"}).subscribe({
-      next: (res) => {console.log(res)}
+      next: (res) => {
+        this.router.navigate(['/inbox']);
+      }
     })
   }
 }

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\TicklerController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -37,3 +38,17 @@ Route::middleware(['auth'])->post('/appointments', [AppointmentController::class
 Route::middleware(['auth'])->put('/appointments/{appointmentId}', [AppointmentController::class, 'update']);
 
 Route::middleware(['auth'])->delete('/appointments/{appointmentId}', [AppointmentController::class, 'destroy']);
+
+/**
+ * Tickler
+ */
+
+ Route::middleware(['auth'])->get('/ticklers', [TicklerController::class, 'indexByUser']);
+
+ Route::middleware(['auth'])->get('/ticklers/{ticklerId}', [TicklerController::class, 'show']);
+ 
+ Route::middleware(['auth'])->post('/ticklers', [TicklerController::class, 'store']);
+ 
+ Route::middleware(['auth'])->put('/ticklers/{ticklerId}', [TicklerController::class, 'update']);
+ 
+ Route::middleware(['auth'])->delete('/ticklers/{ticklerId}', [TicklerController::class, 'destroy']);

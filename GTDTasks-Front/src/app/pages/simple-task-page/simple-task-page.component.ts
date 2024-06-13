@@ -18,9 +18,6 @@ export class SimpleTaskPageComponent implements OnInit {
     this.route.url.subscribe(segments => {
       this.ruta = segments.join('/');
     });
-    this.taskApi.getTasks().subscribe(
-      (response) => {this.tasksReceived = response}
-    )
   }
 
   filterTasksByType(type: string): TaskResponse[] {
