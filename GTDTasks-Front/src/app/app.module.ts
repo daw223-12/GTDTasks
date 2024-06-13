@@ -36,7 +36,6 @@ import { TaskSimpleComponent } from './components/task-simple/task-simple.compon
 import { TodayPageComponent } from './pages/today-page/today-page.component';
 import { CalendarPageComponent } from './pages/calendar-page/calendar-page.component';
 import { TicklerPageComponent } from './pages/tickler-page/tickler-page.component';
-import { CalendarComponent } from './components/calendar';
 import { NavbarBottomComponent } from './components/navbar-bottom/navbar-bottom.component';
 import { TaskHorizontalGrouperComponent } from './components/task-horizontal-grouper/task-horizontal-grouper.component';
 import { ReminderTabsComponent } from './components/reminder-tabs/reminder-tabs.component';
@@ -87,7 +86,6 @@ export function createTranslateLoader(http: HttpClient) {
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule,
-    CalendarComponent,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
