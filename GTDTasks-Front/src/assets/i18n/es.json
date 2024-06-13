@@ -22,9 +22,9 @@
         "search": "Buscar"
     },
     "ticklerFile": {
-        "week": "Semana",
-        "month": "Mes",
-        "year": "Año",
+        "today": "Hoy",
+        "nextDays": "Próximos Días",
+        "all": "Todo",
         "date": "fecha",
         "reminder": "Recordatorio",
         "addReminder": "Agregar recordatorio"

@@ -24,7 +24,6 @@ export class TaskSimpleComponent {
     this.route.url.subscribe((segments) => {
       this.ruta = segments.join('/');
     });
-    console.log(this.ruta);
   }
 
   get groupArrayControls() {
@@ -44,13 +43,14 @@ export class TaskSimpleComponent {
       }
   }
 
-  addMeal() {
+  addTask() {
     var inputsArray = (this.myForm.get('groupArray') as FormArray);
     console.log(inputsArray)
     const newGroup = new FormGroup({
       label: new FormControl('')
     });
     inputsArray.push(newGroup);
+    
     this.taskApi.createNewTask({name: ".", type: this.ruta}).subscribe({
       next: res => {
         let newTask: SimpleTask = {
@@ -77,7 +77,7 @@ export class TaskSimpleComponent {
   enterKeyPressed(event: KeyboardEvent) {
     if (event.key === 'Enter') {
       event.preventDefault();
-      this.addMeal();
+      this.addTask();
     }
   }
 

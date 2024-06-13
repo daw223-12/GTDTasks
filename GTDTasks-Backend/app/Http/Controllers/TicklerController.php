@@ -69,7 +69,7 @@ class TicklerController extends Controller
 
             $tickler->save();
 
-            return response()->noContent();
+            return response()->json($tickler, 201);
 
         } catch (Exception $e) {
 
