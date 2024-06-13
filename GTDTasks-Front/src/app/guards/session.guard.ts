@@ -11,6 +11,7 @@ export const sessionGuard: CanActivateFn = (route, state) => {
   return authService.getUser().pipe(
     map(user => {
       if (user) {
+        console.log(user);
         return true;
       } else {
         router.navigate(['/login']);

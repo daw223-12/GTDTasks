@@ -1,26 +1,47 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, switchMap } from 'rxjs';
 import { TaskResponse } from '../models/task-response';
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TasksService {
-  baseUrl: string = 'http://localhost/api/tasks';
+  private baseUrl: string = 'http://localhost:8000/api/tasks';
+  private csrfUrl = 'http://localhost:8000/sanctum/csrf-cookie';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private cookieService: CookieService) { }
+
+  getCsrfToken(): Observable<any> {
+    return this.http.get(this.csrfUrl, { withCredentials: true });
+  }
 
   createNewTask(data: any): Observable<any> {
-    return this.http.post<any>(this.baseUrl, data);
+    return this.getCsrfToken().pipe(
+      switchMap(() => {
+        const headers = new HttpHeaders({
+          'X-XSRF-TOKEN': this.cookieService.get('XSRF-TOKEN')
+        });
+        return this.http.post(this.baseUrl, data, { headers: headers, withCredentials: true });
+      })
+    );
   }
+
+  getTasks(): Observable<any> {
+    return this.getCsrfToken().pipe(
+      switchMap(() => {
+        const headers = new HttpHeaders({
+          'X-XSRF-TOKEN': this.cookieService.get('XSRF-TOKEN')
+        });
+        return this.http.get(this.baseUrl, { headers: headers, withCredentials: true });
+      })
+    );
+  }
+
 
   updateTask(data: any, id: number): Observable<any> {
     return this.http.put<any>(this.baseUrl+id, data);
-  }
-
-  getTasks(): Observable<TaskResponse[]> {
-    return this.http.get<TaskResponse[]>(this.baseUrl);
   }
 
   deleteTask(id: number): Observable<any> {
