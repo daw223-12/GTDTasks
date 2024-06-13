@@ -30,7 +30,7 @@ WORKDIR /var/www/html/GTDTasks-Front
 # Build de la SPA
 RUN mkdir ../GTDTasks
 
-RUN mv ./dist/* ../GTDTasks
+RUN mv ./dist/gtdtasks/* ../GTDTasks
 RUN cp ./public/.htaccess ../GTDTasks
 
 
