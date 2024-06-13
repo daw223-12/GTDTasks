@@ -8,8 +8,8 @@ import { CookieService } from 'ngx-cookie-service';
   providedIn: 'root'
 })
 export class TasksService {
-  private baseUrl: string = 'http://localhost:8000/api/tasks';
-  private csrfUrl = 'http://localhost:8000/sanctum/csrf-cookie';
+ private baseUrl: string = 'http://200.234.231.11/gtdtasks-backend/api/tasks';
+  private csrfUrl = 'http://200.234.231.11/gtdtasks-backend/sanctum/csrf-cookie';
 
   constructor(private http: HttpClient, private cookieService: CookieService) { }
 

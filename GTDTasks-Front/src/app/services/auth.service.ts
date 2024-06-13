@@ -7,9 +7,9 @@ import { catchError, Observable, switchMap, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  baseUrl: string = 'http://localhost:8000';
-  private csrfUrl = 'http://localhost:8000/sanctum/csrf-cookie';
-  private apiUrl = 'http://localhost:8000/login';
+  baseUrl: string = 'http://200.234.231.11/gtdtasks-backend';
+  private csrfUrl = 'http://200.234.231.11/gtdtasks-backend/sanctum/csrf-cookie';
+  private apiUrl = 'http://200.234.231.11/gtdtasks-backend/login';
 
   constructor(private http: HttpClient, private cookieService: CookieService) { }
 
