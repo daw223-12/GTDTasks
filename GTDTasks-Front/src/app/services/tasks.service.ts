@@ -41,10 +41,24 @@ export class TasksService {
 
 
   updateTask(data: any, id: number): Observable<any> {
-    return this.http.put<any>(this.baseUrl+id, data);
+    return this.getCsrfToken().pipe(
+      switchMap(() => {
+        const headers = new HttpHeaders({
+          'X-XSRF-TOKEN': this.cookieService.get('XSRF-TOKEN')
+        });
+        return this.http.put(this.baseUrl+"/"+id, data, { headers: headers, withCredentials: true });
+      })
+    );
   }
 
   deleteTask(id: number): Observable<any> {
-    return this.http.delete<any>(this.baseUrl+id);
+    return this.getCsrfToken().pipe(
+      switchMap(() => {
+        const headers = new HttpHeaders({
+          'X-XSRF-TOKEN': this.cookieService.get('XSRF-TOKEN')
+        });
+        return this.http.delete(this.baseUrl+"/"+id, { headers: headers, withCredentials: true });
+      })
+    );
   }
 }

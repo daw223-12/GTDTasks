@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { TaskCardComponent } from 'src/app/components/task-card/task-card.component';
 import { SimpleTask } from 'src/app/models/simple-task';
 import { TaskResponse } from 'src/app/models/task-response';
-import { AuthService } from 'src/app/services/auth.service';
 import { TasksService } from 'src/app/services/tasks.service';
 
 @Component({
@@ -11,6 +11,8 @@ import { TasksService } from 'src/app/services/tasks.service';
   styleUrls: ['./simple-task-page.component.scss'],
 })
 export class SimpleTaskPageComponent implements OnInit {
+  @ViewChildren(TaskCardComponent) taskCards!: QueryList<TaskCardComponent>
+
   ruta!: string;
   tasksReceived!: TaskResponse[];
   actionables: SimpleTask[] = [];
@@ -19,14 +21,15 @@ export class SimpleTaskPageComponent implements OnInit {
 
 
   constructor(private route: ActivatedRoute, private taskApi: TasksService) {}
+
   ngOnInit(): void {
     this.route.url.subscribe((segments) => {
       this.ruta = segments.join('/');
     });
-    this.taskApi.createNewTask({ name: 'Néstor guapo', type: 'actionable' }).subscribe({next: res => {console.log(res)}});
-    this.taskApi.getTasks().subscribe({next: res => {console.log(res)}});
+    this.taskApi.getTasks().subscribe({next: res => {
+      this.filterTasksByType(res)
+    }});
   }
-
   
 
   filterTasksByType(data: SimpleTask[]){
@@ -38,7 +41,17 @@ export class SimpleTaskPageComponent implements OnInit {
       } else if (item.type === 'hibernating') {
         this.hibernatings.push(item);
       }
-      // Puedes agregar más condiciones si tienes más tipos
+    });
+
+    this.refreshTaskCards();
+
+  }
+
+  refreshTaskCards() {
+    this.taskCards.forEach(taskCard => {
+      if (taskCard.tasks.length) {
+        taskCard.refreshTasks();
+      }
     });
   }
 }
