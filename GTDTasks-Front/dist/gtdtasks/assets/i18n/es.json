@@ -1,0 +1,32 @@
+{
+    "login": {
+        "login": "Iniciar sesión",
+        "register": "Registro de usuario",
+        "username": "Nombre de usuario",
+        "password": "Contraseña",
+        "email": "E-mail",
+        "confirmPassword": "Confirmar contraseña",
+        "recoverPassword": "Recuperar contraseña"
+    },
+    "taskList": {
+        "deleteBtn": "Borrar"
+    },
+    "header": {
+        "inbox": "Inbox",
+        "today": "Hoy",
+        "calendar": "Calendario",
+        "actionable": "Accionable",
+        "hibernating": "Incubadora",
+        "tickler": "Recordatorios",
+        "logOut": "Cerrar sesión",
+        "search": "Buscar"
+    },
+    "ticklerFile": {
+        "today": "Hoy",
+        "nextDays": "Próximos Días",
+        "all": "Todo",
+        "date": "fecha",
+        "reminder": "Recordatorio",
+        "addReminder": "Agregar recordatorio"
+    }
+}
