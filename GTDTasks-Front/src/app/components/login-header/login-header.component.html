@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark" aria-label="Third navbar example">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">GTDTasks</a>
+      <div class="d-flex align-items-center my-auto">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03"
+          aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <button class="navbar-toggler" type="button" mat-icon-button matTooltip="{{'header.logOut' | translate}}"
+          color="white" aria-label="Logout">
+          <mat-icon [ngStyle]="{'color':'white'}">exit_to_app</mat-icon>
+        </button>
+      </div>
+        <button mat-icon-button matTooltip="{{'header.logOut' | translate}}" color="white" aria-label="Logout" (click)="logout()">
+          <mat-icon [ngStyle]="{'color':'white'}">exit_to_app</mat-icon>
+        </button>
+      </div>
+  </nav>

@@ -48,6 +48,9 @@ import { LoginRegisterComponent } from './components/login-register/login-regist
 import { SimpleTaskPageComponent } from './pages/simple-task-page/simple-task-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { CalendarTabsComponent } from './components/calendar-tabs/calendar-tabs.component';
+import { CalendarsComponent } from './components/calendars/calendars.component';
+import { LoginHeaderComponent } from './components/login-header/login-header.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -72,6 +75,9 @@ export function createTranslateLoader(http: HttpClient) {
     LoginRegisterComponent,
     SimpleTaskPageComponent,
     NotFoundPageComponent,
+    CalendarTabsComponent,
+    CalendarsComponent,
+    LoginHeaderComponent,
   ],
   imports: [
     BrowserModule,

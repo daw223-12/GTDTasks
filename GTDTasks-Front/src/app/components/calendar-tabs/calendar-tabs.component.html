@@ -1,0 +1,6 @@
+<mat-tab-group>
+    <!-- TODO: Que sean variables los contenidos de reminders y reminder group -->
+    <mat-tab label="{{'ticklerFile.today' | translate}}"> <br><br><br><app-calendars [reminders]="ticklers[0]"></app-calendars> </mat-tab>
+    <mat-tab label="{{'ticklerFile.nextDays' | translate}}"> <br><br><app-calendars [reminders]="ticklers[1]"></app-calendars></mat-tab>
+    <mat-tab label="{{'ticklerFile.all' | translate}}"> <br><br><app-calendars [reminders]="ticklers[2]"></app-calendars></mat-tab>
+  </mat-tab-group>
