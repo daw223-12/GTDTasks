@@ -45,7 +45,7 @@ class TaskController extends Controller
 
             $task->save();
 
-            return response()->noContent();
+            return response()->json($task, 201);
 
         } catch (Exception $e) {
 

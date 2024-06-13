@@ -17,7 +17,7 @@
             <div class="col-9 col-sm-9 col-md-10 d-flex justify-content-around flex-wrap">
                 <h4 class="d-inline d-md-none mt-2 mb-0 w-100 text-center">{{'ticklerFile.date' | translate}}</h4>
                 <div class="align-all-center">
-                    <input type="date" class=" form-control date my-2" required />
+                    <input formControlName="date" type="date" class=" form-control date my-2" required />
                 </div>
                 <h4 class="d-inline d-md-none mt-2 mb-0 w-100 text-center">{{'ticklerFile.reminder' | translate}}</h4>
                 <textarea formControlName="label" (input)="onInput(i)" (blur)="onBlurInput(i)" #inputs
@@ -28,7 +28,7 @@
         </div>
     </div>
     <button color="accent" class="btn btn-outline-secondary m-2" aria-label="Example icon button with a plus one icon"
-        (click)="addMeal()">
+        (click)="addReminder()">
         {{'ticklerFile.addReminder' | translate}}
     </button>
 </form>

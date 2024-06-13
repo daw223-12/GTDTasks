@@ -13,7 +13,7 @@ export class TasksService {
 
   constructor(private http: HttpClient, private cookieService: CookieService) { }
 
-  getCsrfToken(): Observable<any> {
+  private getCsrfToken(): Observable<any> {
     return this.http.get(this.csrfUrl, { withCredentials: true });
   }
 

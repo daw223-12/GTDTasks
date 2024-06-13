@@ -18,7 +18,7 @@ const routes: Routes = [
     children: [
       { path: 'inbox', component: SimpleTaskPageComponent },
       { path: '', redirectTo: '/inbox', pathMatch: 'full' },
-      { path: 'today', component: TodayPageComponent },
+      { path: 'today', component: SimpleTaskPageComponent },
       { path: 'calendar', component: CalendarPageComponent },
       { path: 'actionable', component: SimpleTaskPageComponent },
       { path: 'hibernating', component: SimpleTaskPageComponent },

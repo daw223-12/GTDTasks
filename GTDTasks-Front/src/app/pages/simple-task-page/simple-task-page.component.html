@@ -3,4 +3,5 @@
     <app-task-card [tasks]="inbox" *ngIf="ruta == 'inbox'" class="d-flex justify-content-center align-items-baseline m-5 flex-fill"></app-task-card>
     <app-task-card [tasks]="actionables" *ngIf="ruta == 'actionable'" class="d-flex justify-content-center align-items-baseline m-5 flex-fill"></app-task-card>
     <app-task-card [tasks]="hibernatings" *ngIf="ruta == 'hibernating'" class="d-flex justify-content-center align-items-baseline m-5 flex-fill"></app-task-card>
+    <app-task-card [tasks]="today" *ngIf="ruta == 'today'" class="d-flex justify-content-center align-items-baseline m-5 flex-fill"></app-task-card>
 </div>

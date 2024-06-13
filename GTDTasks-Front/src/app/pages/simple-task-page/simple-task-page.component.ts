@@ -14,9 +14,9 @@ export class SimpleTaskPageComponent implements OnInit {
   @ViewChildren(TaskCardComponent) taskCards!: QueryList<TaskCardComponent>
 
   ruta!: string;
-  tasksReceived!: TaskResponse[];
   actionables: SimpleTask[] = [];
   inbox: SimpleTask[] = [];
+  today: SimpleTask[] = [];
   hibernatings: SimpleTask[] = [];
 
 
@@ -40,6 +40,8 @@ export class SimpleTaskPageComponent implements OnInit {
         this.inbox.push(item);
       } else if (item.type === 'hibernating') {
         this.hibernatings.push(item);
+      } else if (item.type === 'today') {
+        this.today.push(item);
       }
     });
 

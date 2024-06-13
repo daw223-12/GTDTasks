@@ -32,6 +32,7 @@ export class TaskSimpleComponent {
   }
 
   fillTasks() {
+    
     if (this.tasks != null)
       {
         this.tasks.forEach(element => {
@@ -51,7 +52,14 @@ export class TaskSimpleComponent {
     });
     inputsArray.push(newGroup);
     this.taskApi.createNewTask({name: ".", type: this.ruta}).subscribe({
-      next: res => console.log(res)
+      next: res => {
+        let newTask: SimpleTask = {
+          id: res.id,
+          name: '.',
+          type: this.ruta
+        }
+        this.tasks.push(newTask)
+      }
     })
     // Focus on the new input
     setTimeout(() => {
