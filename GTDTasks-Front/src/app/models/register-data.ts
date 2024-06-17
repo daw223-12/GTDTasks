@@ -2,5 +2,5 @@ export interface RegisterData {
     username: string,
     email: string,
     password: string,
-    rePassword: string
+    password_confirmation: string
 }

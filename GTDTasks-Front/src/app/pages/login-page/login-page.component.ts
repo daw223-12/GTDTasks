@@ -17,7 +17,7 @@ export class LoginPageComponent implements OnInit {
     username: '',
     email: '',
     password: '',
-    rePassword: ''
+    password_confirmation: ''
   }
 
   constructor(private route: ActivatedRoute, private router: Router, private auth: AuthService) { }
@@ -46,13 +46,7 @@ export class LoginPageComponent implements OnInit {
   }
 
   register() {
-    console.log(this.registerData)
-    this.auth.register({
-      "name" : "Prueba",
-      "email" : "fjuesas4@gmail.com",
-      "password" : "Example123",
-      "password_confirmation": "Example123"
-  }).subscribe({
+    this.auth.register(this.registerData).subscribe({
     next: res => {
       this.router.navigate(['/inbox']);
     }
@@ -60,7 +54,7 @@ export class LoginPageComponent implements OnInit {
   }
 
   login() {
-    this.auth.login({email: "fjuesas4@gmail.com", password: "Example123"}).subscribe({
+    this.auth.login(this.loginData).subscribe({
       next: (res) => {
         this.router.navigate(['/inbox']);
       }
